@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('拉取代码') {
             steps {
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'git_ssh', url: 'git@github.com:wufchun/web_demo.git']])
+                checkout scmGit(branches: [[name: '*/${branch}']], extensions: [], userRemoteConfigs: [[credentialsId: 'git_ssh', url: 'git@github.com:wufchun/web_demo.git']])
             }
         }
     stage('编译构建') {
